@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Task2HNDDanielHung</string>
+    <string name="login">Introduce el usuario</string>
+    <string name="log">Usuario</string>
+    <string name="pass">Password</string>
+    <string name="password">Introduce la contraseña</string>
+    <string name="entrar">Iniciar sesión</string>
+    <string name="registrar">Registrarse</string>
+    <string name="loginact">LoginActivity</string>
+    <string name="title_activity_registro">RegistroActivity</string>
+    <string name="nombre">Nombre</string>
+    <string name="nombre2">Introduce tu nombre</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="apellidos2">Introduce tus apellidos</string>
+    <string name="email">E-mail</string>
+    <string name="email2">Introduce tu correro electrónico</string>
+    <string name="passre">Contraseña</string>
+    <string name="passre2">Introduce una contraseña</string>
+    <string name="passcon">Repite la contraseña</string>
+    <string name="passcon2">Introduce de nuevo la contraseña</string>
+    <string name="terminos">Acepto los términos y condiciones legales</string>
+    <string name="user">Usuario</string>
+    <string name="user2">Introduce el usuario</string>
+    <string name="perfil">Perfil</string>
+    <string name="descripcion">Descripción</string>
+    <string name="personajes">Naves</string>
+    <string name="objetos">Objetos</string>
+    <string name="tips">Tips</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="salir">Cerrar sesión</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="editar">Editar cuenta</string>
+    <string name="titulojuego">Space Effect</string>
+    <string name="sinopsis">Mata</string>
+    <string name="controles">Controles</string>
+</resources>
