@@ -1,17 +1,32 @@
 package com.example.alumnodanielhung.task2hnddanielhung.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.example.alumnodanielhung.task2hnddanielhung.R;
+import com.example.alumnodanielhung.task2hnddanielhung.activities.NavesActivity;
+import com.example.alumnodanielhung.task2hnddanielhung.activities.ObjetosActivity;
+import com.example.alumnodanielhung.task2hnddanielhung.adapters.ObjetosAdapter;
+import com.example.alumnodanielhung.task2hnddanielhung.adapters.PersonajesAdapter;
+import com.example.alumnodanielhung.task2hnddanielhung.beans.ObjetosBean;
+import com.example.alumnodanielhung.task2hnddanielhung.beans.PersonajesBean;
+import com.example.alumnodanielhung.task2hnddanielhung.test.Modelo;
 
-public class ListObjetosFragment extends Fragment {
+import java.util.ArrayList;
 
+public class ListObjetosFragment extends Fragment implements AdapterView.OnItemClickListener {
+
+    private ListView listObjetos;
+    private ArrayList objetos;
+    public static final String OBJETOS_KEY="OBJETOS_KEY";
 
     public ListObjetosFragment() {
         // Required empty public constructor
@@ -21,8 +36,13 @@ public class ListObjetosFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_objetos, container, false);
+        View view = inflater.inflate(R.layout.fragment_list_objetos, container, false);
+        listObjetos = (ListView) view.findViewById(R.id.listObjetos);
+        objetos = Modelo.getObjetos();
+        ObjetosAdapter adapter = new ObjetosAdapter(getActivity(), R.layout.item_objetos, objetos);
+        listObjetos.setAdapter(adapter);
+        listObjetos.setOnItemClickListener(this);
+        return view;
     }
 
     @Override
@@ -37,5 +57,14 @@ public class ListObjetosFragment extends Fragment {
 
     public static ListObjetosFragment newInstance() {
         return new ListObjetosFragment();
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long l) {
+        ObjetosBean objetosBean = (ObjetosBean) objetos.get(posicion);
+        Intent intent = new Intent(getActivity(), ObjetosActivity.class);
+
+        intent.putExtra(OBJETOS_KEY, objetosBean);
+        startActivity(intent);
     }
 }

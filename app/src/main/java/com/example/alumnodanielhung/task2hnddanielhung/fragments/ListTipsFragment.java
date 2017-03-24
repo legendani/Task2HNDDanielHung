@@ -7,11 +7,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.example.alumnodanielhung.task2hnddanielhung.R;
 
+import java.util.ArrayList;
+
 public class ListTipsFragment extends Fragment {
 
+    private ListView listTips;
+    private ArrayList tips;
+    public static final String TIPS_KEY="TIPS_KEY";
 
     public ListTipsFragment() {
         // Required empty public constructor

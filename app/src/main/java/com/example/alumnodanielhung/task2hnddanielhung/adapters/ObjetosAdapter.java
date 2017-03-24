@@ -40,7 +40,7 @@ public class ObjetosAdapter extends ArrayAdapter<ObjetosBean>{
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
-        ObjetosAdapter.ViewHolder viewHolder;
+        ViewHolder viewHolder;
 
         if (view == null) {
             viewHolder = new ViewHolder();
@@ -48,11 +48,11 @@ public class ObjetosAdapter extends ArrayAdapter<ObjetosBean>{
             viewHolder.txtTituloObjetos = (TextView) view.findViewById(R.id.txtTituloObjetos);
             view.setTag(viewHolder);
         }else {
-            viewHolder = (ObjetosAdapter.ViewHolder) view.getTag();
+            viewHolder = (ViewHolder) view.getTag();
         }
         ObjetosBean objetosBean = objects.get(position);
 
-        viewHolder.txtTituloObjetos.setText(ObjetosBean.getTitulo());
+        viewHolder.txtTituloObjetos.setText(objetosBean.getTitulo());
         return view;
     }
 }
