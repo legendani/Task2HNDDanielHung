@@ -90,6 +90,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 finish();
                 break;
         }
+        item.setChecked(true);
+        getSupportActionBar().setTitle(item.getTitle());
+        drawer.closeDrawers();
         return true;
     }
 }

@@ -1,19 +1,30 @@
 package com.example.alumnodanielhung.task2hnddanielhung.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.alumnodanielhung.task2hnddanielhung.R;
+import com.example.alumnodanielhung.task2hnddanielhung.activities.ObjetosActivity;
+import com.example.alumnodanielhung.task2hnddanielhung.activities.TipsActivity;
+import com.example.alumnodanielhung.task2hnddanielhung.adapters.ObjetosAdapter;
+import com.example.alumnodanielhung.task2hnddanielhung.adapters.TipsAdapter;
+import com.example.alumnodanielhung.task2hnddanielhung.beans.ObjetosBean;
+import com.example.alumnodanielhung.task2hnddanielhung.beans.TipsBean;
+import com.example.alumnodanielhung.task2hnddanielhung.test.Modelo;
 
 import java.util.ArrayList;
 
-public class ListTipsFragment extends Fragment {
+import static com.example.alumnodanielhung.task2hnddanielhung.fragments.ListObjetosFragment.OBJETOS_KEY;
+
+public class ListTipsFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     private ListView listTips;
     private ArrayList tips;
@@ -28,7 +39,13 @@ public class ListTipsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_tips, container, false);
+        View view = inflater.inflate(R.layout.fragment_list_tips, container, false);
+        listTips = (ListView) view.findViewById(R.id.listTips);
+        tips = Modelo.getTips();
+        TipsAdapter adapter = new TipsAdapter(getActivity(), R.layout.item_tips, tips);
+        listTips.setAdapter(adapter);
+        listTips.setOnItemClickListener(this);
+        return view;
     }
 
     @Override
@@ -43,5 +60,14 @@ public class ListTipsFragment extends Fragment {
 
     public static ListTipsFragment newInstance() {
         return new ListTipsFragment();
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long l) {
+        TipsBean tipsBean = (TipsBean) tips.get(posicion);
+        Intent intent = new Intent(getActivity(), TipsActivity.class);
+
+        intent.putExtra(TIPS_KEY, tipsBean);
+        startActivity(intent);
     }
 }
