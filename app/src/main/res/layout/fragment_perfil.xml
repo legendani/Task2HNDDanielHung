@@ -9,7 +9,6 @@
     <TextView android:id="@+id/txtusuariofragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Usuario"
         android:textAlignment="center"
         android:textSize="20dp"/>
 
@@ -22,21 +21,18 @@
     <TextView android:id="@+id/txtNombrefragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nombre"
         android:textAlignment="center"
         android:textSize="15dp"/>
 
     <TextView android:id="@+id/txtApellidosfragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Apellidos"
         android:textSize="15dp"
         android:textAlignment="center"/>
 
     <TextView android:id="@+id/txtEmailfragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
         android:textSize="15dp"
         android:textAlignment="center"/>
 

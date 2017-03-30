@@ -20,7 +20,7 @@
         android:layout_margin="10dp"
         android:layout_gravity="center"/>
 
-    <TextView
+    <TextView android:id="@+id/txtDescripcion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sinopsis"
@@ -38,5 +38,11 @@
         android:layout_height="wrap_content"
         android:text="@string/controles"
         android:layout_margin="10dp"/>
+
+    <Button android:id="@+id/btnCompartir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/compartir"
+        android:layout_gravity="center"/>
 
 </LinearLayout>

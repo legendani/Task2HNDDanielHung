@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.alumnodanielhung.task2hnddanielhung.Preferencias;
 import com.example.alumnodanielhung.task2hnddanielhung.R;
+import com.example.alumnodanielhung.task2hnddanielhung.Utils;
 import com.example.alumnodanielhung.task2hnddanielhung.beans.UsuarioBean;
 
 public class RegistroActivity extends AppCompatActivity implements View.OnClickListener {
@@ -50,7 +51,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                 String passcon = editPasscon.getText().toString();
 
                 if (user != null && nombre != null && apellidos != null && email != null && pass != null && passcon != null &&
-                        !user.isEmpty() && !nombre.isEmpty() && !apellidos.isEmpty() && !email.isEmpty() && !pass.isEmpty() && !passcon.isEmpty()) {
+                        !user.isEmpty() && !nombre.isEmpty() && !apellidos.isEmpty() && !email.isEmpty() && !pass.isEmpty() && !passcon.isEmpty() && Utils.isEmail(email)) {
                     UsuarioBean usuarioBean = new UsuarioBean(apellidos, email, nombre, pass, user);
 
                     Preferencias preferencias = new Preferencias(RegistroActivity.this);

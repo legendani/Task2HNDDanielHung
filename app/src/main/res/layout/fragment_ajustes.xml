@@ -8,13 +8,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Version"
+        android:text="@string/version"
         android:background="@color/colorPrimary"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Overview"
+        android:text="Información"
         android:textSize="40dp"/>
 
     <TextView
@@ -36,7 +36,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Updates"
+        android:text="Actualizaciones"
         android:textSize="40dp"/>
 
     <TextView
@@ -47,7 +47,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Contact us"
+        android:text="Contáctanos"
         android:textSize="40dp"/>
 
     <TextView
