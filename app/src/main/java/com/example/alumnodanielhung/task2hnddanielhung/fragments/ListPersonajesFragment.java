@@ -2,7 +2,6 @@ package com.example.alumnodanielhung.task2hnddanielhung.fragments;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,7 +14,7 @@ import com.example.alumnodanielhung.task2hnddanielhung.R;
 import com.example.alumnodanielhung.task2hnddanielhung.activities.NavesActivity;
 import com.example.alumnodanielhung.task2hnddanielhung.adapters.PersonajesAdapter;
 import com.example.alumnodanielhung.task2hnddanielhung.beans.PersonajesBean;
-import com.example.alumnodanielhung.task2hnddanielhung.test.Modelo;
+import com.example.alumnodanielhung.task2hnddanielhung.Contenido.Contenido;
 
 import java.util.ArrayList;
 
@@ -36,7 +35,7 @@ public class ListPersonajesFragment extends Fragment implements AdapterView.OnIt
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_list_personajes, container, false);
         listPersonajes = (ListView) view.findViewById(R.id.listPersonajes);
-        personajes = Modelo.getPersonajes();
+        personajes = Contenido.getPersonajes();
         PersonajesAdapter adapter = new PersonajesAdapter(getActivity(), R.layout.item_nave, personajes);
         listPersonajes.setAdapter(adapter);
         listPersonajes.setOnItemClickListener(this);

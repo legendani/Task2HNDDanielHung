@@ -2,7 +2,6 @@ package com.example.alumnodanielhung.task2hnddanielhung.fragments;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,13 +11,10 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.alumnodanielhung.task2hnddanielhung.R;
-import com.example.alumnodanielhung.task2hnddanielhung.activities.NavesActivity;
 import com.example.alumnodanielhung.task2hnddanielhung.activities.ObjetosActivity;
 import com.example.alumnodanielhung.task2hnddanielhung.adapters.ObjetosAdapter;
-import com.example.alumnodanielhung.task2hnddanielhung.adapters.PersonajesAdapter;
 import com.example.alumnodanielhung.task2hnddanielhung.beans.ObjetosBean;
-import com.example.alumnodanielhung.task2hnddanielhung.beans.PersonajesBean;
-import com.example.alumnodanielhung.task2hnddanielhung.test.Modelo;
+import com.example.alumnodanielhung.task2hnddanielhung.Contenido.Contenido;
 
 import java.util.ArrayList;
 
@@ -38,7 +34,7 @@ public class ListObjetosFragment extends Fragment implements AdapterView.OnItemC
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_objetos, container, false);
         listObjetos = (ListView) view.findViewById(R.id.listObjetos);
-        objetos = Modelo.getObjetos();
+        objetos = Contenido.getObjetos();
         ObjetosAdapter adapter = new ObjetosAdapter(getActivity(), R.layout.item_objetos, objetos);
         listObjetos.setAdapter(adapter);
         listObjetos.setOnItemClickListener(this);

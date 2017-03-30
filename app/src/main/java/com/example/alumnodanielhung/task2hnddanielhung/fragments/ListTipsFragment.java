@@ -2,7 +2,6 @@ package com.example.alumnodanielhung.task2hnddanielhung.fragments;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,17 +11,12 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.alumnodanielhung.task2hnddanielhung.R;
-import com.example.alumnodanielhung.task2hnddanielhung.activities.ObjetosActivity;
 import com.example.alumnodanielhung.task2hnddanielhung.activities.TipsActivity;
-import com.example.alumnodanielhung.task2hnddanielhung.adapters.ObjetosAdapter;
 import com.example.alumnodanielhung.task2hnddanielhung.adapters.TipsAdapter;
-import com.example.alumnodanielhung.task2hnddanielhung.beans.ObjetosBean;
 import com.example.alumnodanielhung.task2hnddanielhung.beans.TipsBean;
-import com.example.alumnodanielhung.task2hnddanielhung.test.Modelo;
+import com.example.alumnodanielhung.task2hnddanielhung.Contenido.Contenido;
 
 import java.util.ArrayList;
-
-import static com.example.alumnodanielhung.task2hnddanielhung.fragments.ListObjetosFragment.OBJETOS_KEY;
 
 public class ListTipsFragment extends Fragment implements AdapterView.OnItemClickListener {
 
@@ -41,7 +35,7 @@ public class ListTipsFragment extends Fragment implements AdapterView.OnItemClic
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_list_tips, container, false);
         listTips = (ListView) view.findViewById(R.id.listTips);
-        tips = Modelo.getTips();
+        tips = Contenido.getTips();
         TipsAdapter adapter = new TipsAdapter(getActivity(), R.layout.item_tips, tips);
         listTips.setAdapter(adapter);
         listTips.setOnItemClickListener(this);

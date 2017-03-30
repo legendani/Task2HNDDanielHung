@@ -1,4 +1,4 @@
-package com.example.alumnodanielhung.task2hnddanielhung.test;
+package com.example.alumnodanielhung.task2hnddanielhung.Contenido;
 
 import com.example.alumnodanielhung.task2hnddanielhung.R;
 import com.example.alumnodanielhung.task2hnddanielhung.beans.ObjetosBean;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * Created by ALUMNOS on 16/03/2017.
  */
 
-public class Modelo {
+public class Contenido {
 
     public static ArrayList<PersonajesBean> getPersonajes(){
         ArrayList<PersonajesBean> personajes = new ArrayList<>();
