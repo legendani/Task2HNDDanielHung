@@ -9,7 +9,7 @@ import java.io.Serializable;
  */
 
 public class UsuarioBean implements Serializable{
-    private String user, nombre, apellidos, email, pass;
+    private String user, nombre, apellidos, email, pass, photo;
 
     public UsuarioBean(String apellidos, String email, String nombre, String pass, String user) {
         this.apellidos = apellidos;
@@ -24,6 +24,14 @@ public class UsuarioBean implements Serializable{
 
     public String getUser() {
         return user;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public void setUser(String user) {
@@ -61,6 +69,7 @@ public class UsuarioBean implements Serializable{
     public void setPass(String pass) {
         this.pass = pass;
     }
+
 
     public String toJson() {
         Gson gson = new Gson();
