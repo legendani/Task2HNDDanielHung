@@ -57,7 +57,10 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
         txtusuariofragment.setText("Usuario: " + usuarioBean.getUser());
         txtEmailfragment.setText("Email: " + usuarioBean.getEmail());
 
-        imgPerfil.setImageURI(Uri.parse(usuarioBean.getPhoto()));
+        //no guarda imagen
+        if (imgPerfil == null) {
+            imgPerfil.setImageURI(Uri.parse(usuarioBean.getPhoto()));
+        }
 
         btnEditar.setOnClickListener(this);
         
@@ -71,10 +74,8 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         Intent intent = new Intent();
-// Show only images, no videos or anything else
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-// Always show the chooser (if there are multiple options available)
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PHOTO);
     }
 
