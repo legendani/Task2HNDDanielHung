@@ -58,16 +58,16 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                     preferencias.setUsuario(usuarioBean);
 
                     if (pass.equals(passcon)) {
-                        Toast.makeText(RegistroActivity.this, "El usuario se ha guardado correctamente", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegistroActivity.this, R.string.usuarioguardado, Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(RegistroActivity.this, LoginActivity.class);
                         startActivity(intent);
                         finish();
                     }else{
-                        Toast.makeText(RegistroActivity.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegistroActivity.this, R.string.passmatch, Toast.LENGTH_SHORT).show();
                     }
                 }else{
-                    Toast.makeText(RegistroActivity.this, "Todos los datos son obligatorios", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegistroActivity.this, R.string.required, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.btnIniciar:
