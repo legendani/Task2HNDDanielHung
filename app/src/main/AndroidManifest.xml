@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.alumnodanielhung.task2hnddanielhung">
 
-    <uses-feature android:name="android.hardware.camera"
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="false" />
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -26,7 +28,8 @@
         <activity android:name=".activities.RegistroActivity" />
         <activity android:name=".activities.NavesActivity" />
         <activity android:name=".activities.ObjetosActivity" />
-        <activity android:name=".activities.TipsActivity"></activity>
+        <activity android:name=".activities.TipsActivity" />
+        <activity android:name=".activities.EditActivity"></activity>
     </application>
 
 </manifest>

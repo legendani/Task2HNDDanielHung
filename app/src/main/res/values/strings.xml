@@ -40,7 +40,7 @@
     <string name="titulojuego">Space Effect</string>
     <string name="sinopsis">Necesitas destruir la nave base para poder rescatar a tus compañeros</string>
     <string name="controles">Utiliza las teclas WASD para poder moverte, la barra espaciadora para disparar</string>
-    <string name="version">Version 1.01</string>
+    <string name="version">Version 1.0</string>
     <string name="compartir">Compartir texto</string>
     <string name="info">Información</string>
     <string name="facts">Características</string>
@@ -51,4 +51,9 @@
     <string name="updates">Añadida nueva animación</string>
     <string name="contactanos">Envía un email a dhg@gmail.com</string>
     <string name="imagen">Editar imagen</string>
+    <string name="newpass">Introduce la nueva contraseña</string>
+    <string name="volver">Volver</string>
+    <string name="guardar">Guardar</string>
+    <string name="newuser">Nuevo nombre de usuario</string>
+    <string name="newmail">Nuevo correo</string>
 </resources>

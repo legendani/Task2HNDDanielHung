@@ -19,7 +19,9 @@ import android.widget.TextView;
 
 import com.example.alumnodanielhung.task2hnddanielhung.Preferencias;
 import com.example.alumnodanielhung.task2hnddanielhung.R;
+import com.example.alumnodanielhung.task2hnddanielhung.activities.EditActivity;
 import com.example.alumnodanielhung.task2hnddanielhung.activities.LoginActivity;
+import com.example.alumnodanielhung.task2hnddanielhung.activities.RegistroActivity;
 import com.example.alumnodanielhung.task2hnddanielhung.beans.UsuarioBean;
 
 import java.io.IOException;
@@ -85,6 +87,8 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
                 startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PHOTO);
                 break;
             case R.id.btnEditarpass:
+                Intent intent1 = new Intent(getActivity(), EditActivity.class);
+                startActivity(intent1);
                 break;
         }
     }
