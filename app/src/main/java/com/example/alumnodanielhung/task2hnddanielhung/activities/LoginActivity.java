@@ -57,13 +57,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             startActivity(intent);
                             finish();
                         }else {
-                            Toast.makeText(LoginActivity.this, "Datos incorrectos", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, R.string.incorrect, Toast.LENGTH_SHORT).show();
                         }
                     }else {
-                        Toast.makeText(LoginActivity.this, "No existe el usuario", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, R.string.userrequired, Toast.LENGTH_SHORT).show();
                     }
                 }else {
-                    Toast.makeText(LoginActivity.this, "Datos obligatorios", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, R.string.required, Toast.LENGTH_SHORT).show();
                 }
                 break;
 

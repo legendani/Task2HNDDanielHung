@@ -32,6 +32,7 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
     private TextView txtusuariofragment, txtNombrefragment, txtApellidosfragment, txtEmailfragment;
     private ImageView imgPerfil;
     private Button btnEditar;
+    private Button btnEditarpass;
 
 
     @Override
@@ -48,6 +49,7 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
         imgPerfil = (ImageView) rootView.findViewById(R.id.imgPerfil);
 
         btnEditar = (Button) rootView.findViewById(R.id.btnEditar);
+        btnEditarpass = (Button) rootView.findViewById(R.id.btnEditarpass);
 
         Preferencias preferencias = new Preferencias(getActivity());
         UsuarioBean usuarioBean = preferencias.getUsuario();
@@ -57,10 +59,14 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
         txtusuariofragment.setText("Usuario: " + usuarioBean.getUser());
         txtEmailfragment.setText("Email: " + usuarioBean.getEmail());
 
-        //no guarda imagen
-        //imgPerfil.setImageURI(Uri.parse(usuarioBean.getPhoto()));
-
         btnEditar.setOnClickListener(this);
+        btnEditarpass.setOnClickListener(this);
+
+        if(usuarioBean.getPhoto()!=null && !usuarioBean.getPhoto().isEmpty()) {
+            Uri uri = Uri.parse(usuarioBean.getPhoto());
+
+            imgPerfil.setImageURI(uri);
+        }
         
         return rootView;
     }
@@ -71,13 +77,19 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PHOTO);
+        switch (view.getId()) {
+            case R.id.btnEditar:
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PHOTO);
+                break;
+            case R.id.btnEditarpass:
+                break;
+        }
     }
 
-    /*
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -85,19 +97,14 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
         if (requestCode == SELECT_PHOTO && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
 
             Uri uri = data.getData();
+            imgPerfil.setImageURI(uri);
 
             Preferencias preferencias = new Preferencias(getActivity());
             UsuarioBean usuarioBean = preferencias.getUsuario();
 
             usuarioBean.setPhoto(uri.toString());
+            preferencias.setUsuario(usuarioBean);
 
-            Bitmap bitmap = null;
-            try {
-                bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), uri);
-                imgPerfil.setImageBitmap(bitmap);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
-    }*/
+    }
 }

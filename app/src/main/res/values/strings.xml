@@ -31,6 +31,8 @@
     <string name="passmatch">Las contraseñas no coinciden</string>
     <string name="usuarioguardado">El usuario se ha guardado correctamente</string>
     <string name="required">Todos los datos son obligatorios</string>
+    <string name="userrequired">El usuario no existe</string>
+    <string name="incorrect">Los datos introducidos no son correctos</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -48,4 +50,5 @@
     <string name="caracteristicas">Juego de naves</string>
     <string name="updates">Añadida nueva animación</string>
     <string name="contactanos">Envía un email a dhg@gmail.com</string>
+    <string name="imagen">Editar imagen</string>
 </resources>

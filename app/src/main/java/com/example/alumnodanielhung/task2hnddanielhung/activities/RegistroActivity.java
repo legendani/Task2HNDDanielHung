@@ -54,10 +54,9 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                         !user.isEmpty() && !nombre.isEmpty() && !apellidos.isEmpty() && !email.isEmpty() && !pass.isEmpty() && !passcon.isEmpty() && Utils.isEmail(email)) {
                     UsuarioBean usuarioBean = new UsuarioBean(apellidos, email, nombre, pass, user);
 
-                    Preferencias preferencias = new Preferencias(RegistroActivity.this);
-                    preferencias.setUsuario(usuarioBean);
-
                     if (pass.equals(passcon)) {
+                        Preferencias preferencias = new Preferencias(RegistroActivity.this);
+                        preferencias.setUsuario(usuarioBean);
                         Toast.makeText(RegistroActivity.this, R.string.usuarioguardado, Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(RegistroActivity.this, LoginActivity.class);

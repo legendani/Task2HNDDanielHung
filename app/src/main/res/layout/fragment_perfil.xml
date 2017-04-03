@@ -16,7 +16,8 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_margin="20dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:src="@drawable/masseffect"/>
 
     <TextView android:id="@+id/txtNombrefragment"
         android:layout_width="match_parent"
@@ -37,6 +38,13 @@
         android:textAlignment="center"/>
 
     <Button android:id="@+id/btnEditar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/imagen"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
+
+    <Button android:id="@+id/btnEditarpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/editar"
