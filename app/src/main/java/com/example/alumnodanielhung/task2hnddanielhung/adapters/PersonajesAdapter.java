@@ -2,10 +2,12 @@ package com.example.alumnodanielhung.task2hnddanielhung.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.alumnodanielhung.task2hnddanielhung.R;
@@ -32,6 +34,7 @@ public class PersonajesAdapter extends ArrayAdapter<PersonajesBean>{
 
     class ViewHolder {
         TextView txtTitulo;
+        ImageView imgNave;
     }
 
     @NonNull
@@ -44,6 +47,7 @@ public class PersonajesAdapter extends ArrayAdapter<PersonajesBean>{
             viewHolder = new ViewHolder();
             view = LayoutInflater.from(context).inflate(resource, null);
             viewHolder.txtTitulo = (TextView) view.findViewById(R.id.txtTitulo);
+            viewHolder.imgNave = (ImageView) view.findViewById(R.id.imgNave);
             view.setTag(viewHolder);
         }else {
             viewHolder = (ViewHolder) view.getTag();
@@ -51,6 +55,7 @@ public class PersonajesAdapter extends ArrayAdapter<PersonajesBean>{
         PersonajesBean personajesBean = objects.get(position);
 
         viewHolder.txtTitulo.setText(personajesBean.getTitulo());
+        viewHolder.imgNave.setImageDrawable(ContextCompat.getDrawable(context, personajesBean.getFoto()));
         return view;
     }
 }

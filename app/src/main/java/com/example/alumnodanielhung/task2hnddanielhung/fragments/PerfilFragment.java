@@ -58,9 +58,7 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
         txtEmailfragment.setText("Email: " + usuarioBean.getEmail());
 
         //no guarda imagen
-        if (imgPerfil == null) {
-            imgPerfil.setImageURI(Uri.parse(usuarioBean.getPhoto()));
-        }
+        //imgPerfil.setImageURI(Uri.parse(usuarioBean.getPhoto()));
 
         btnEditar.setOnClickListener(this);
         
@@ -79,6 +77,7 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PHOTO);
     }
 
+    /*
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -100,5 +99,5 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
                 e.printStackTrace();
             }
         }
-    }
+    }*/
 }

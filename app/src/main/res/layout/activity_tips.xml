@@ -15,16 +15,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:textSize="40dp" />
-
-    <ImageView android:id="@+id/imgConsejo"
-        android:layout_width="match_parent"
-        android:layout_height="150dp" />
+        android:textSize="40dp"
+        android:layout_marginBottom="15dp"/>
 
     <TextView android:id="@+id/txtDescripConsejo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:layout_marginBottom="35dp"/>
 
     <Button android:id="@+id/btnCompartir"
         android:layout_width="wrap_content"

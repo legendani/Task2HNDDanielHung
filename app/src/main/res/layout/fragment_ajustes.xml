@@ -14,45 +14,45 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Información"
+        android:text="@string/info"
         android:textSize="40dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="overview"/>
+        android:text="@string/informacion"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Facts and figures"
+        android:text="@string/facts"
         android:textSize="40dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="overview"/>
+        android:text="@string/caracteristicas"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Actualizaciones"
+        android:text="@string/actualizaciones"
         android:textSize="40dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="overview"/>
+        android:text="@string/updates"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Contáctanos"
+        android:text="@string/contact"
         android:textSize="40dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="overview"/>
+        android:text="@string/contactanos"/>
 
 </LinearLayout>

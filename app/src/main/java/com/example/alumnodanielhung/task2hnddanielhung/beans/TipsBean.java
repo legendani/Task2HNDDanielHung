@@ -8,12 +8,10 @@ import java.util.ArrayList;
  */
 
 public class TipsBean implements Serializable{
-    private int foto;
     private String titulo, descripcion;
 
-    public TipsBean(String descripcion, int foto, String titulo) {
+    public TipsBean(String descripcion, String titulo) {
         this.descripcion = descripcion;
-        this.foto = foto;
         this.titulo = titulo;
     }
 
@@ -23,14 +21,6 @@ public class TipsBean implements Serializable{
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public int getFoto() {
-        return foto;
-    }
-
-    public void setFoto(int foto) {
-        this.foto = foto;
     }
 
     public String getTitulo() {

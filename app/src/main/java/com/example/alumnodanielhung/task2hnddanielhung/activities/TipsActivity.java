@@ -20,7 +20,6 @@ import java.io.Serializable;
 
 public class TipsActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageView imgConsejo;
     private TextView txtConsejo, txtDescripConsejo;
     private Button btnCompartir;
 
@@ -31,8 +30,6 @@ public class TipsActivity extends AppCompatActivity implements View.OnClickListe
 
         TipsBean tipsBean = (TipsBean) getIntent().getSerializableExtra(ListTipsFragment.TIPS_KEY);
 
-        imgConsejo = (ImageView) findViewById(R.id.imgConsejo);
-
         txtConsejo = (TextView) findViewById(R.id.txtConsejo);
         txtDescripConsejo = (TextView) findViewById(R.id.txtDescripConsejo);
 
@@ -40,8 +37,6 @@ public class TipsActivity extends AppCompatActivity implements View.OnClickListe
 
         txtConsejo.setText(String.valueOf(tipsBean.getTitulo()));
         txtDescripConsejo.setText(String.valueOf(tipsBean.getDescripcion()));
-
-        imgConsejo.setImageDrawable(ContextCompat.getDrawable(this, tipsBean.getFoto()));
 
         btnCompartir.setOnClickListener(this);
     }
