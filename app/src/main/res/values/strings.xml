@@ -33,6 +33,7 @@
     <string name="required">Todos los datos son obligatorios</string>
     <string name="userrequired">El usuario no existe</string>
     <string name="incorrect">Los datos introducidos no son correctos</string>
+    <string name="saved">Todos lo datos se han guardado correctamente</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

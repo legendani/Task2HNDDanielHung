@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.alumnodanielhung.task2hnddanielhung.MainActivity;
 import com.example.alumnodanielhung.task2hnddanielhung.Preferencias;
 import com.example.alumnodanielhung.task2hnddanielhung.R;
+import com.example.alumnodanielhung.task2hnddanielhung.Utils;
 import com.example.alumnodanielhung.task2hnddanielhung.beans.UsuarioBean;
 
 public class EditActivity extends AppCompatActivity implements View.OnClickListener {
@@ -31,6 +32,13 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
         btnVolver = (Button) findViewById(R.id.btnVolver);
 
         btnVolver.setOnClickListener(this);
+
+        Preferencias preferencias = new Preferencias(EditActivity.this);
+        UsuarioBean usuarioBean = preferencias.getUsuario();
+
+        newPass.setText(usuarioBean.getPass());
+        newUser.setText(usuarioBean.getUser());
+        newMail.setText(usuarioBean.getEmail());
     }
 
     @Override
@@ -39,7 +47,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
         String newuser = newUser.getText().toString();
         String newmail = newMail.getText().toString();
 
-        if (newpass != null || !newpass.isEmpty() || newuser != null && !newuser.isEmpty() || newmail != null && !newmail.isEmpty()) {
+        if (newpass != null || !newpass.isEmpty() || newuser != null && !newuser.isEmpty() || newmail != null && !newmail.isEmpty() && Utils.isEmail(newmail)) {
             Preferencias preferencias = new Preferencias(EditActivity.this);
             UsuarioBean usuarioBean = preferencias.getUsuario();
 
@@ -48,11 +56,13 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
             usuarioBean.setEmail(newmail);
 
             preferencias.setUsuario(usuarioBean);
-            Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.saved, Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(EditActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
+        } else {
+            Toast.makeText(this, R.string.incorrect, Toast.LENGTH_SHORT).show();
         }
     }
 }
